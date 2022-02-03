@@ -28,5 +28,7 @@ public class DesignPatternDemo {
         AbstractFactory colorFactory = FactoryProducer.getFactory("Color");
         Color red = colorFactory.getColor("Red");
         red.fill();
+        Color blue = colorFactory.getColor("blue");
+        blue.fill();
     }
 }
