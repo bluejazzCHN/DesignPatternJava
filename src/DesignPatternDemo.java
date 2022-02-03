@@ -1,6 +1,7 @@
 import DesignPattern.AbstractFactory.AbstractFactory;
 import DesignPattern.AbstractFactory.Color;
 import DesignPattern.AbstractFactory.FactoryProducer;
+import DesignPattern.Prototype.ShapeCache;
 import DesignPattern.Singleton.Singleton;
 import DesignPattern.Factory.Shape;
 import DesignPattern.Factory.ShapeFactory;
@@ -30,5 +31,19 @@ public class DesignPatternDemo {
         red.fill();
         Color blue = colorFactory.getColor("blue");
         blue.fill();
+
+        /*prototype pattern*/
+        ShapeCache.loadCache();
+
+        DesignPattern.Prototype.Shape clonedShape = (DesignPattern.Prototype.Shape) ShapeCache.getShape("1");
+        System.out.println("Cloned Shape : " + clonedShape.getType());
+        clonedShape.draw();
+
+        DesignPattern.Prototype.Shape clonedShape2 = (DesignPattern.Prototype.Shape) ShapeCache.getShape("2");
+        System.out.println("Cloned Shape : " + clonedShape2.getType());
+        clonedShape2.draw();
+        DesignPattern.Prototype.Shape clonedShape3 = (DesignPattern.Prototype.Shape) ShapeCache.getShape("3");
+        System.out.println("Cloned Shape : " + clonedShape3.getType());
+        clonedShape3.draw();
     }
 }
