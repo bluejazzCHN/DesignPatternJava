@@ -8,6 +8,7 @@ import DesignPattern.Factory.ShapeFactory;
 
 public class DesignPatternDemo {
     public static void main(String[] args) {
+
         System.out.println("Design Pattern Demo.");
 
         /*Singleton demo*/
@@ -21,6 +22,7 @@ public class DesignPatternDemo {
         rectangle.draw();
         Shape square = ShapeFactory.getShape(ShapeFactory.square);
         square.draw();
+
         /*AbstractFactory demo*/
         AbstractFactory shapeFactory = FactoryProducer.getFactory("Shape");
         DesignPattern.AbstractFactory.Shape af_circle =
@@ -42,6 +44,7 @@ public class DesignPatternDemo {
         DesignPattern.Prototype.Shape clonedShape2 = (DesignPattern.Prototype.Shape) ShapeCache.getShape("2");
         System.out.println("Cloned Shape : " + clonedShape2.getType());
         clonedShape2.draw();
+
         DesignPattern.Prototype.Shape clonedShape3 = (DesignPattern.Prototype.Shape) ShapeCache.getShape("3");
         System.out.println("Cloned Shape : " + clonedShape3.getType());
         clonedShape3.draw();
