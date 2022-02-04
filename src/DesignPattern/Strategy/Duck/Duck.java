@@ -4,8 +4,8 @@ import Fly.FlyBehavior;
 import Quack.QuackBehavior;
 
 public abstract class Duck {
-    FlyBehavior flyBehavior;
-    QuackBehavior quackBehaviour;
+    public FlyBehavior flyBehavior;
+    public QuackBehavior quackBehaviour;
 
     public abstract void display();
 
