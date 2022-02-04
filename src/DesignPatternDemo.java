@@ -1,6 +1,10 @@
 import DesignPattern.AbstractFactory.AbstractFactory;
 import DesignPattern.AbstractFactory.Color;
 import DesignPattern.AbstractFactory.FactoryProducer;
+import DesignPattern.Decorator.Circle;
+import DesignPattern.Decorator.Rectangle;
+import DesignPattern.Decorator.RedShapeDecorator;
+import DesignPattern.Decorator.ShapeDecorator;
 import DesignPattern.Prototype.ShapeCache;
 import DesignPattern.Singleton.Singleton;
 import DesignPattern.Factory.Shape;
@@ -48,5 +52,18 @@ public class DesignPatternDemo {
         DesignPattern.Prototype.Shape clonedShape3 = (DesignPattern.Prototype.Shape) ShapeCache.getShape("3");
         System.out.println("Cloned Shape : " + clonedShape3.getType());
         clonedShape3.draw();
+
+        /*Decorator Pattern*/
+        DesignPattern.Decorator.Shape dc_circle = new Circle();
+        ShapeDecorator redCircle = new RedShapeDecorator(new Circle());
+        ShapeDecorator redRectangle = new RedShapeDecorator(new Rectangle());
+        System.out.println("Circle with normal border");
+        dc_circle.draw();
+
+        System.out.println("\nCircle of red border");
+        redCircle.draw();
+
+        System.out.println("\nRectangle of red border");
+        redRectangle.draw();
     }
 }
