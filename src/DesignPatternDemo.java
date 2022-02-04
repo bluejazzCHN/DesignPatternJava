@@ -65,5 +65,13 @@ public class DesignPatternDemo {
 
         System.out.println("\nRectangle of red border");
         redRectangle.draw();
+
+        /*Strategy Pattern*/
+        Duck.Duck md = new Duck.MarllardDuck(new Fly.FlyWithWings(), new Quack.Squeak());
+        md.display();
+        md.performFly();
+        md.setFlyBehavior(new Fly.FlyNoWay());
+        md.performFly();
+        md.performQuack();
     }
 }
