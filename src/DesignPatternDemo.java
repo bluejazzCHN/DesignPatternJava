@@ -9,7 +9,9 @@ import DesignPattern.Prototype.ShapeCache;
 import DesignPattern.Singleton.Singleton;
 import DesignPattern.Factory.Shape;
 import DesignPattern.Factory.ShapeFactory;
-import DesignPattern.Strategy.Duck.MarllardDuck;
+import DesignPattern.Strategy.Duck.*;
+import DesignPattern.Strategy.Fly.*;
+import DesignPattern.Strategy.Quack.*;
 
 public class DesignPatternDemo {
     public static void main(String[] args) {
@@ -68,10 +70,10 @@ public class DesignPatternDemo {
         redRectangle.draw();
 
         /*Strategy Pattern*/
-        Duck.Duck md = new MarllardDuck(new Fly.FlyWithWings(), new Quack.Squeak());
+        Duck md = new MallardDuck(new FlyWithWings(), new Squeak());
         md.display();
         md.performFly();
-        md.setFlyBehavior(new Fly.FlyNoWay());
+        md.setFlyBehavior(new FlyNoWay());
         md.performFly();
         md.performQuack();
     }

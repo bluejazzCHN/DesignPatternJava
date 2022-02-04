@@ -1,4 +1,4 @@
-package Fly;
+package DesignPattern.Strategy.Fly;
 
 public class FlyWithWings implements FlyBehavior {
     public void fly() {
