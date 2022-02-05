@@ -5,6 +5,9 @@ import DesignPattern.Decorator.Circle;
 import DesignPattern.Decorator.Rectangle;
 import DesignPattern.Decorator.RedShapeDecorator;
 import DesignPattern.Decorator.ShapeDecorator;
+import DesignPattern.Observer.CurrentConditionDisplay;
+import DesignPattern.Observer.Observer;
+import DesignPattern.Observer.WeatherData;
 import DesignPattern.Prototype.ShapeCache;
 import DesignPattern.Singleton.Singleton;
 import DesignPattern.Factory.Shape;
@@ -76,5 +79,11 @@ public class DesignPatternDemo {
         md.setFlyBehavior(new FlyNoWay());
         md.performFly();
         md.performQuack();
+
+        /*Observer Pattern*/
+        WeatherData w = new WeatherData();
+        CurrentConditionDisplay c = new CurrentConditionDisplay(w);
+        w.setMeasurements(10, 11, 12);
+        w.setMeasurements(50, 75, 34);
     }
 }
