@@ -85,5 +85,6 @@ public class DesignPatternDemo {
         CurrentConditionDisplay c = new CurrentConditionDisplay(w);
         w.setMeasurements(10, 11, 12);
         w.setMeasurements(50, 75, 34);
+        c.removeSelf();
     }
 }

@@ -26,4 +26,8 @@ public class CurrentConditionDisplay implements Observer, DisplayElement {
         this.temperature = temperature;
         display();
     }
+
+    public void removeSelf() {
+        weatherData.removeObserver(this);
+    }
 }
