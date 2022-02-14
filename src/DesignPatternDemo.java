@@ -6,7 +6,6 @@ import DesignPattern.Decorator.Rectangle;
 import DesignPattern.Decorator.RedShapeDecorator;
 import DesignPattern.Decorator.ShapeDecorator;
 import DesignPattern.Observer.CurrentConditionDisplay;
-import DesignPattern.Observer.Observer;
 import DesignPattern.Observer.WeatherData;
 import DesignPattern.Prototype.ShapeCache;
 import DesignPattern.Singleton.Singleton;
@@ -47,15 +46,15 @@ public class DesignPatternDemo {
         /*prototype pattern*/
         ShapeCache.loadCache();
 
-        DesignPattern.Prototype.Shape clonedShape = (DesignPattern.Prototype.Shape) ShapeCache.getShape("1");
+        DesignPattern.Prototype.Shape clonedShape = ShapeCache.getShape("1");
         System.out.println("Cloned Shape : " + clonedShape.getType());
         clonedShape.draw();
 
-        DesignPattern.Prototype.Shape clonedShape2 = (DesignPattern.Prototype.Shape) ShapeCache.getShape("2");
+        DesignPattern.Prototype.Shape clonedShape2 = ShapeCache.getShape("2");
         System.out.println("Cloned Shape : " + clonedShape2.getType());
         clonedShape2.draw();
 
-        DesignPattern.Prototype.Shape clonedShape3 = (DesignPattern.Prototype.Shape) ShapeCache.getShape("3");
+        DesignPattern.Prototype.Shape clonedShape3 = ShapeCache.getShape("3");
         System.out.println("Cloned Shape : " + clonedShape3.getType());
         clonedShape3.draw();
 
